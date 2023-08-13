@@ -88,7 +88,10 @@ body{
   }
 
   &__logo-container {
-    background-color: yellow;
+    background-image: url(../../public/img/logoPNG.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    justify-content: center;
   }
 
   &__form-container {

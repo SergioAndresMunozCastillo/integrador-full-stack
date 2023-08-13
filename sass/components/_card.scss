@@ -1,21 +1,24 @@
 .card {
-  outline: 2px solid #6A555A; /* Como el borde pero no ocupa espacio en la caja */
   width: 220px;
   max-width: 300px;
   height: 400px;
   overflow: hidden; /* Si el contenido ocupa más espacio que el tamaño del contenedor. Queda oculto */
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
   background-color: #FFF5DB;
-  box-shadow: 0 1px 5px rgba(0,0,0, .2), 0 0 3px rgba(0,0,0, .3);
+  /* box-shadow: 0 1px 5px rgba(0,0,0, .2), 0 0 3px rgba(0,0,0, .3); */
 
   transition: all .2s;
 
-  &:hover,
-  &:focus {
-    transform: scale(1.03) skewX(0);
-    transform-origin: bottom;
-    box-shadow: 0 7px 8px rgba(0,0,0, .05), 0 3px 3px rgba(0,0,0, .01);
+  border: solid 1px transparent;
+
+  &::after {
+    transform: scale(0, 0);
+    transform-origin: bottom right;
+    z-index: -1;
+    transition: transform 0.25s ease;
+  }
+  &:hover{
+    border: solid 2px black;
+    width: 0;
   }
 
 
@@ -67,6 +70,7 @@
   &__content {
     padding: 1em;
     height: 10px;
+    height: 60%;
   }
 
   @media (min-width: 1024px) {
@@ -84,6 +88,8 @@
 
     &__article { /* .card__article */
       display: flex;
+      flex-direction: column-reverse;
+      top: 0;
     }
 
     & &__image-container {
@@ -96,7 +102,19 @@
       width: 40%;
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     }
+
   }
+}
+
+.card__article { /* .card__article */
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 1fr 5fr;
+  gap: 5px;
+}
+
+.card__content{
+  order: -1;
 }
 
 .card:nth-child(odd){
