@@ -79,6 +79,10 @@
     }
   }
 
+  &__description {
+    font-family: 'EB Garamond', serif;
+  }
+
   @media (min-width: 426px) and (max-width: 768px) {
     & {
       min-width: 400px;
