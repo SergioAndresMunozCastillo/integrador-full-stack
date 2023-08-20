@@ -84,10 +84,11 @@ body{
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
-  justify-content: space-between;
   &__logo-container,
-  &__form-container {
+  &__form-container,
+  &__carrito-container {
     padding: 1em;
+    padding-bottom: 12px;
   }
 
   &__logo-container {
@@ -101,36 +102,62 @@ body{
     width: 100%;
     background-repeat: no-repeat;
     background-size: contain;
-    justify-content: center;
+    background-position: center;
   }
 
   &__form-container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
     order: 1;
     background-color: #333;
     width: 90%;
   }
 
 
+  &__form-search,
+  &__form-submit {
+    border-radius: 12px;
+    margin-left: 0.5em;
+  }
   &__form-search {
     background-color: #FFF5DB;
     width: 100%;
   }
 
   &__form-submit {
+    align-self: center;
     background-color: #f75d33;
     color: #333;
+    width: 112px;
+    height: 30px;
   }
 
   &__carrito-container {
     display: flex;
     flex: 0 0 3em; /* shorthand (grow shrink basis */
-    justify-self: center;
-    background-color: goldenrod;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
     width: 10%;
-    height: 50px;
+    height: auto;
     order: 2;
+    color: transparent;
+    flex-basis: auto;
+  }
+
+  &__carrito-container::before{
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+
+    font: var(--fa-font-solid);
+    content: "\f07a";
+    color: white;
+  }
+
+  &__carrito-container:hover{
+    cursor: pointer;
   }
 }
 
