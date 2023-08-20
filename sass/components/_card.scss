@@ -4,6 +4,8 @@
   height: 400px;
   overflow: hidden; /* Si el contenido ocupa más espacio que el tamaño del contenedor. Queda oculto */
   background-color: #FFF5DB;
+  text-decoration: none;
+  color: inherit;
   /* box-shadow: 0 1px 5px rgba(0,0,0, .2), 0 0 3px rgba(0,0,0, .3); */
 
   transition: all .2s;
@@ -19,6 +21,9 @@
   &:hover{
     border: solid 2px black;
     width: 0;
+    background: rgb(251,195,87);
+    background: radial-gradient(circle, rgba(251,195,87,0.6979166666666667) 34%, rgba(252,146,42,0.7147233893557423) 45%, rgba(245,103,17,0.7371323529411764) 73%);
+    transition: all .6s ease;
   }
 
 
@@ -47,11 +52,19 @@
     background-color: blue;
     overflow: hidden;
     clip-path: polygon(0 0, 100% 0, 100% 200px, 0 180px);
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(100%); /* Chrome 19+ & Safari 6+ */
+    transition: all .6s ease; /* Fade to color for Chrome and Safari */
+    backface-visibility: hidden;
   }
 
   &:hover &__image-container,
   &:focus &__image-container {
     clip-path: polygon(0 0, 100% 0, 100% 190px, 0 200px);
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(0); /* Chrome 19+ & Safari 6+ */
+    transition: all .6s ease; /* Fade to color for Chrome and Safari */
+    backface-visibility: hidden; /* Fix for transition flickering */
   }
 
   &__image {
