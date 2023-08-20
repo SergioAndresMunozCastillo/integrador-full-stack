@@ -5,10 +5,14 @@
 /* font-family: 'EB Garamond', serif; */
 .section-cards {
   background-color: #FFF5DB;
+  background-image: url(../../public/img/noise.png);
   padding: 1em;
 }
 
 .cards-container {
+  background-image: url(../../public/img/noise.png);
+  margin-left: 15%;
+  margin-right: 15%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -21,10 +25,10 @@
 }
 
 body{
-  margin-left: 15%;
-  margin-right: 15%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   font-family: 'Prata', serif;
+  background-image: url(../../public/img/noise.png);
+  color: #333;
 }
