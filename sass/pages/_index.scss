@@ -8,8 +8,17 @@
   background-image: url(../../public/img/noise.png);
   padding: 1em;
 
+  &__header {
+    display: inline-block;
+    justify-content: center;
+    margin-right: 15%;
+  }
+
   &__header > h1{
     visibility: hidden;
+    width: 100%;
+    font-size: 1.5em;
+    text-align: start;
   }
 
   &__header > p{
@@ -18,7 +27,15 @@
 
   &__header > h1::after {
     visibility: visible;
+    text-align: center;
     content: 'Columna de productos';
+    }
+
+    @media (max-width: 722px) {
+      &__header > h1::after{
+        visibility:hidden;
+        content: '';
+      }
   }
 }
 
@@ -26,6 +43,23 @@
   background-image: url(../../public/img/noise.png);
   margin-left: 15%;
   margin-right: 15%;
+  @media (max-width: 1024px) {
+    & {
+      margin-left: 0;
+      margin-right: 30%;
+    }
+  }
+
+  @media (max-width: 890px){
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    min-height: 360vh;
+    margin-left: 17%;
+    margin-right: 0;
+    overflow: scroll;
+  }
+
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
